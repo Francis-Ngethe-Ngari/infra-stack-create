@@ -1,0 +1,15 @@
+[
+{
+    "ParameterKey": "EnvironmentName",
+    "ParameterValue": "CircleciDemo"
+},
+
+{
+    "ParameterKey": "AMIId",
+    "ParameterValue": "ami-04bad3c587fe60d89"
+},
+{
+    "ParameterKey": "InstanceType",
+    "ParameterValue": "t2.micro"
+}
+]

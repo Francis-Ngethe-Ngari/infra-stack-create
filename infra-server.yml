@@ -1,0 +1,36 @@
+Description: >
+  Francis Ngethe / infrastructure creation CI/CD
+
+Parameters:
+  EnvironmentName:
+    Description: An environment name that will be prefixed to resource names
+    Type: String
+
+  AMIId:
+    Description: Specifies EC2 instance identity
+    Type: String
+
+  InstanceType:
+    Description: Specifies the EC2 instance architecture
+    Type: String
+
+Resources:
+  Ec2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      SecurityGroups:
+        - ! Ref InstanceSecGroup
+    KeyName:
+      - asante_key
+    ImageId: ! Ref AMIId
+    InstanceType: ! Ref InstanceType
+
+  InstanceSecGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      Description: Enable access via SSH port 22
+      SecurityGroupIngress:
+        IpProtocol: tcp
+        FromPort: 22
+        ToPort: 22
+        CirdId: 0.0.0.0/0
