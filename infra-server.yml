@@ -19,10 +19,10 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       SecurityGroups:
-        - ! Ref InstanceSecGroup
-    KeyName: asante_key
-    ImageId: ! Ref AMIId
-    InstanceType: ! Ref InstanceType
+        - !Ref InstanceSecGroup
+      KeyName: asante_key 
+      ImageId: !Ref AMIId
+      InstanceType: !Ref InstanceType
 
   InstanceSecGroup:
     Type: AWS::EC2::SecurityGroup
