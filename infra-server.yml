@@ -32,4 +32,4 @@ Resources:
         IpProtocol: tcp
         FromPort: 22
         ToPort: 22
-        CirdId: 0.0.0.0/0
+        CidrId: 0.0.0.0/0
