@@ -23,7 +23,7 @@ Resources:
       KeyName: asante_key 
       ImageId: !Ref AMIId
       InstanceType: !Ref InstanceType
-
+  # Security group
   InstanceSecGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
