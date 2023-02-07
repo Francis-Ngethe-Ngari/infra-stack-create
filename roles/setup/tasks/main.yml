@@ -1,0 +1,29 @@
+---
+- name: install dependencies
+  become: true
+  apt:
+    name: ["nodejs", "npm"]
+    state: latest
+    update_cache: yes
+
+- name: install pm2
+  become: true
+  npm:
+    name: pm2
+    global: yes
+    production: yes
+    state: present
+    
+- name: create a directory
+  file:
+    path: ~/web
+    state: directory
+
+- name: copy index test packages
+  template:
+    src: "files/hello.js"
+    dest: "~/web/hello.js"
+
+- name: executing node
+  shell: |
+    pm2 start ~/web/hello.js -f
